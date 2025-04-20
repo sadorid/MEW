@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            text-align: center;
+            background-color: #fce1e4;
+            overflow-x: hidden;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 6vw;
+            color: #ec407a;
+            font-family: 'Cursive', sans-serif;
+            margin: 20px 0;
+            animation: pop 1s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .button {
+            background-color: #ec407a;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 5vw;
+            cursor: pointer;
+            margin-top: 30px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d81b60;
+            transform: scale(1.05);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 4.5vw;
+            margin-top: 20px;
+            line-height: 1.6;
+            padding: 0 5vw;
+        }
+
+        .highlight {
+            color: #d81b60;
+            font-weight: bold;
+        }
+
+        .photo-frame {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .photo-frame div {
+            width: 40vw;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 5px solid #ec407a;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .photo-frame img:hover {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            font-size: 3.5vw;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        @media(min-width: 768px) {
+            h1 { font-size: 35px; }
+            .button { font-size: 16px; }
+            .message { font-size: 20px; padding: 0 20%; }
+            .photo-frame div { width: 180px; }
+            .caption { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Page 1: Greeting -->
+<div class="page" id="page1" style="display:block;">
+    <h1>HAPPY BIRTHDAY MERI PGLI GADHI</h1>
+    <p class="message">Tera birthday hai or mai chahta hun tu hamesha haste rahe. Chal dekh kya rakha hai tere liye ❤️</p>
+    <button class="button" onclick="showPage(2); playMusic();">Chal Click Kar</button>
+</div>
+
+<!-- Page 2: Emotional message -->
+<div class="page" id="page2">
+    <h1>Tu Kitni Khaas Hai</h1>
+    <p class="message">Teri har baat, har muskaan, har narazgi – sab kuch mere dil ke both kareeb hai. Tu sirf meri zindagi ka hissa nahi, tu meri zindagi hai.</p>
+    <p class="message">Jab tu hasti hai, lagta hai duniya ruk gayi ho. Jab tu baat karti hai, sab kuch sahi lagne lagta hai. Jab tu naraz hoti hai, dil hil jata hai. or jab tu paas hoti hai, sab kuch perfect lagta hai. Teri har ek baat, teri har ek khamoshi bhi mere liye kuch keh jaati hai. Tu meri har dua ka jawab hai. Teri kami mehsoos hoti hai har pal, par teri yaade kabhi sath chhodti nahi. Har din tu mere khayalon mai hoti hai, har pal tujhe yaad karta hun. Tu nahi hoti to sab kuch adhura lagta hai.</p>
+    <button class="button" onclick="showPage(3);">Aage Dekh</button>
+</div>
+
+<!-- Page 3: Compliments -->
+<div class="page" id="page3">
+    <h1>Teri Tareef Mai Kya Kahun</h1>
+    <p class="message">Tu itni sundar hai ki har pal tujhe dekhne ka mann karta hai. Teri aankhe, tera andaaz, sab kuch meri jaan le leta hai. Tu ek yesi tasveer hai jo har baar naye rang le aati hai. Tu meri zindagi ki vo roshni hai jo kabhi kam nahi hoti. Teri har ek ada, har ek nazar, har ek lafz... sab kuch mere liye kisi khwab se kam nahi. Teri aawaz mai ek sukoon hai, jise sunkar lagta hai har tension se dur ho gaya hu. Tere hone se meri duniya hai, tu hai to sab kuch hai.</p>
+    <button class="button" onclick="showPage(4);">Or Bhi Hai</button>
+</div>
+
+<!-- Page 4: Smile Compliment -->
+<div class="page" id="page4">
+    <h1>Teri Muskaan ❤️</h1>
+    <p class="message">Jab tu hasti hai na... sach keh raha hun, lagta hai sab gham dur ho gaye. Tu hasti hai to lagta hai sab kuch sahi ho gaya. Teri ek muskaan mera din bana deti hai. Teri muskaan mere liye ek dua jesi hai – khushbu se bhara ek pal, jo dil ko sukoon deta hai. Jab tu hasti hai, lagta hai zindagi jeet gaya hun. Teri muskaan har dard ko mita deti hai. Bas tu yuhi hasti reh, meri duniya roshan rahegi. Teri muskaan meri duniya ka noor hai, jise dekh kar har subah khubsurat lagti hai.</p>
+    <button class="button" onclick="showPage(5);">Dekhle Yeh</button>
+</div>
+
+<!-- Page 5: Video Page -->
+<div class="page" id="page5">
+    <h1>Ek Chhoti Si Video</h1>
+    <video id="video1" controls onplay="pauseMusic()" onpause="resumeMusic()">
+        <source src="WhatsApp Video 2025-04-15 at 13.47.03_4e7dc105.mp4" type="video/mp4">
+    </video>
+    <button class="button" onclick="showPage(6);">Aur Bhi Hai</button>
+</div>
+
+<!-- Page 6: Emotional Birthday Letter -->
+<div class="page" id="page6">
+    <h1>Ek Khaas Paighaam</h1>
+    <p class="message">Tera birthday mere liye sirf ek din nahi, ek celebration hai. 3 saal ho gaye... hum properly mile nahi, par tu hamesha dil ke sabse kareeb rahi. Tu hai to sab kuch hai. Happy Birthday ❤️</p>
+    <button class="button" onclick="showPage(7);">Aakhri Surprise</button>
+</div>
+
+<!-- Page 7: Photo Frame -->
+<div class="page" id="page7">
+    <h1>Once Again... Happy Birthday ❤️</h1>
+    <div class="photo-frame">
+        <div>
+            <img src="image1.jpg" alt="Snap 1">
+            <div class="caption">3 saal ho gaye...hum  kabhi mil nahi paye, ek bhi photo saath nahi le paaye</div>
+        </div>
+        <div>
+            <img src="image2.jpg" alt="Snap 2">
+            <div class="caption">Isliye maine teri snaps ki avatar wali photos rakhi hai... taki tujhe dekh sakun</div>
+        </div>
+        <div>
+            <img src="image3.jpg" alt="Snap 3">
+            <div class="caption">Ek din aayega jab hum milenge... or apni khud ki yaadon ki gallery banayenge</div>
+        </div>
+        <div>
+            <img src="image4.jpg" alt="Snap 4">
+            <div class="caption">Har photo uss pal ki hogi... jisme sirf tu aur mai honge</div>
+        </div>
+        <div>
+            <img src="image5.jpg" alt="Snap 5">
+            <div class="caption">Tab tak ye virtual yaadein he mere dil ka sahara hain ❤️</div>
+        </div>
+    </div>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="Sajna - Darshan Raval.mp3" type="audio/mp3">
+</audio>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 7;
+    const music = document.getElementById("bgMusic");
+    let wasPlaying = false;
+
+    function showPage(num) {
+        for (let i = 1; i <= totalPages; i++) {
+            document.getElementById("page" + i).style.display = "none";
+        }
+        document.getElementById("page" + num).style.display = "block";
+    }
+
+    function playMusic() {
+        music.play();
+    }
+
+    function pauseMusic() {
+        if (!music.paused) {
+            music.pause();
+            wasPlaying = true;
+        } else {
+            wasPlaying = false;
+        }
+    }
+
+    function resumeMusic() {
+        if (wasPlaying) {
+            music.play();
+        }
+    }
+</script>
+
+</body>
+</html>
